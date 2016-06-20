@@ -6,11 +6,11 @@ angular.module('objectTable',[]).directive('contenteditable', function() {
     link: function(scope, element, attrs, ctrls) {
       var ngModel = ctrls[0], objectTableCtrl = ctrls[1];
       ngModel.$render = function() {
-        element.html(ngModel.$viewValue == undefined ? '' : ngModel.$viewValue);
+        element.html(ngModel.$viewValue == null ? '' : ngModel.$viewValue);
       };
 
       element.bind('change blur', function() {
-        var oldValue = ngModel.$viewValue == undefined ? '' : ngModel.$viewValue.toString();
+        var oldValue = ngModel.$viewValue == null ? '' : ngModel.$viewValue.toString();
         var newValue = element.text();
         if (oldValue !== newValue) {
           scope.$apply(function() {
