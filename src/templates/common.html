@@ -41,7 +41,7 @@
 			<!-- params: headers and fields -->
 			<td ng-if="!editable" ng-repeat="field in fields">{{item[field]}}</td>
 			<td ng-if="editable" editable ng-repeat="field in fields">
-				<div contenteditable ng-model="item[field]">{{item[field]}}</div>
+				<div contenteditable ng-model="item[field]" header="{{field}}">{{item[field]}}</div>
 			</td>
 		</tr>
 
