@@ -12,11 +12,12 @@ angular.module('objectTable',[]).directive('contenteditable', function() {
       element.bind('change blur', function() {
         var oldValue = ngModel.$viewValue == null ? '' : ngModel.$viewValue.toString();
         var newValue = element.text();
+        var cellName = attrs.header;
         if (oldValue !== newValue) {
           scope.$apply(function() {
               ngModel.$setViewValue(newValue);
             });
-          if (!!objectTableCtrl.onEdit && typeof objectTableCtrl.onEdit === 'function') objectTableCtrl.onEdit({$oldValue: oldValue, $newValue: newValue});
+          if (!!objectTableCtrl.onEdit && typeof objectTableCtrl.onEdit === 'function') objectTableCtrl.onEdit({$oldValue: oldValue, $newValue: newValue, $cellName: cellname});
         }
       })
     }
