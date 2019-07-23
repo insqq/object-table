@@ -7,7 +7,8 @@ angular.module('objectTable').directive('paging', ['$compile','$interpolate',fun
 		require:"^objectTable",
 		scope:{
 			count:"=",
-			display:"="
+			display:"=",
+			pagesToShow:"="
 		},
 		link:function(scope, element, attrs, objectTableCtrl){
 			scope.objectTableCtrl = objectTableCtrl;
