@@ -13,6 +13,7 @@ angular.module('objectTable').directive('objectTable', ['$compile','$interpolate
       resize: '=?',
       paging: '=?',
       pagesToShow: '=?',
+      currentPage: '=',
       fromUrl: '@',
       //search:"@?",
       //headers:"@",
